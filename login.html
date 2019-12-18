@@ -1,0 +1,179 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Sistema de Tarefas</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+		integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+</head>
+
+<body>
+
+	<div class="container h-100" id="login-div">
+		<div class="d-flex justify-content-center h-100">
+			<div class="user_card">
+				<div class="d-flex justify-content-center">
+					<div class="brand_logo_container">
+						<img src="https://projetos.iwanezuk.com.br/rrinfop/imagens/iconusuario.png" class="brand_logo"
+							alt="Logo">
+					</div>
+				</div>
+				<div class="d-flex justify-content-center form_container">
+					<form>
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
+							<input type="text" id="email_field" name="" class="form-control input_user" value=""
+								placeholder="Digite o seu usuário">
+						</div>
+						<div class="input-group mb-2">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+							<input type="password" id="password_field" name="" class="form-control input_pass" value=""
+								placeholder="Digite a sua senha">
+						</div>
+						<div class="form-group">
+
+						</div>
+						<div class="d-flex justify-content-center mt-3 login_container">
+							<button onclick="login()" type="button" id="btnLogin" name="button"
+								class="btn login_btn">Acessar</button>
+
+						</div>
+					</form>
+				</div>
+
+				<div class="mt-4">
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Página do crud-->
+
+	<div id="user-div" >
+
+		<nav style="background-color: #3498db; width: 100%;" class="navbar navbar-light bg-warming mb-4">
+			<p style="color: white; font-size: 2em; width: 50%;" class="navbar-brand mb-0 h1"> <i
+					class="fas fa-tasks"></i> Lista de
+				Tarefas <button style="margin-left: 130%;" id="btnLogout" class="btn btn-primary"> 
+					<a style="text-decoration: none; color: white;" href="notas.html"> <i class="far fa-sticky-note"></i>  Notas adesivas</a></button>
+				<button onclick="logout()" id="btnLogout" class="btn btn-primary"> <i class="fas fa-sign-out-alt"></i>
+					Sair</button></p>
+
+
+		</nav>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6" id="firstSection">
+					<form class="border p-4 mb-4 " id="form">
+						<div class="form-group">
+							<label>Tarefa</label>
+							<input type="text" class="form-control" id="task" placeholder="Digite uma tarefa">
+						</div>
+
+						<div class="form-group">
+							<label>Descrição</label>
+							<input type="text" class="form-control" id="description" placeholder="Digite uma descrição">
+						</div>
+
+						<button type="submit" id="button1" class="btn btn-primary"> <i class="fas fa-plus"></i>
+							Adicionar Tarefa </button>
+						<button style="display: none;" id="button2" class="btn btn-success"> Atualizar Tarefa</button>
+						<button style="display: none;" id="button3" class="btn btn-danger"> Cancelar</button>
+					</form>
+				</div>
+
+				<div class="col-md-6" id="cardSection">
+
+				</div>
+
+
+			</div>
+
+
+		</div>
+
+		<div class="card bg-light mb-12" style=" width=100%;">
+			<div class="card-header"> </div>
+			<div class="card-body">
+				<h5 class="card-title">Desenvolvido usando: <a style="color: purple"
+						href="https://getbootstrap.com/">BOOTSTRAP</a></h5>
+
+			</div>
+
+		</div>
+	</div>
+
+
+
+
+
+
+
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/80ab5e60d7.js" crossorigin="anonymous"></script>
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+ https://firebase.google.com/docs/web/setup#available-libraries -->
+	<script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-analytics.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-messaging.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-functions.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-storage.js"></script>
+
+
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+		</script>
+
+	<script>
+		// Your web app's Firebase configuration
+		var firebaseConfig = {
+			apiKey: "AIzaSyCZ5jGx8WCKB3RvPwul4GiaoXacgDncFqA",
+			authDomain: "lista-de-tarefas-e9a68.firebaseapp.com",
+			databaseURL: "https://lista-de-tarefas-e9a68.firebaseio.com",
+			projectId: "lista-de-tarefas-e9a68",
+			storageBucket: "lista-de-tarefas-e9a68.appspot.com",
+			messagingSenderId: "573621294128",
+			appId: "1:573621294128:web:73464ee61f24d9c22189f5",
+			measurementId: "G-13DFHZTHQF"
+		};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+		integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+		crossorigin="anonymous"></script>
+
+	<script src="javascript/login.js">  </script>
+
+</body>
+
+</html>
